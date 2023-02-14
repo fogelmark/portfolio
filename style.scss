@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
 body {
@@ -9,7 +12,7 @@ body {
   place-items: center;
   padding: 4rem;
   height: 100vh;
-  background-color: #fefae0;
+  // background-color: #fefae0;
 }
 
 .wrapper {
@@ -25,10 +28,13 @@ body {
 .links {
   padding: 2rem;
   align-self: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.links p {
+.links a {
   font-size: 5rem;
+  cursor: pointer;
 }
 
 .name-heading {
@@ -51,4 +57,30 @@ body {
   align-self: flex-end;
   width: 250px;
   padding: 2rem;
+}
+
+// Underline animation
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  width: fit-content;
+}
+
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 5px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transform-origin: bottom left;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
